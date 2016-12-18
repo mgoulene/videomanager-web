@@ -50,34 +50,41 @@
         </dd>
         <dt><span data-translate="vmwebApp.movie.poster">Poster</span></dt>
         <dd>
-            <a ui-sref="picture-detail({id:vm.movie.posterId})">{{vm.movie.posterId}}</a>
+            <img  picture-load="{{vm.movie.posterId}}" style="max-height: 200px;"/>
+            <!--<a ui-sref="picture-detail({id:vm.movie.posterId})">{{vm.movie.posterId}}</a>-->
         </dd>
         <dt><span data-translate="vmwebApp.movie.backdrop">Backdrop</span></dt>
         <dd>
-            <a ui-sref="picture-detail({id:vm.movie.backdropId})">{{vm.movie.backdropId}}</a>
+            <img  picture-load="{{vm.movie.backdropId}}" style="max-height: 200px;"/>
+            <!--<a ui-sref="picture-detail({id:vm.movie.backdropId})">{{vm.movie.backdropId}}</a>-->
         </dd>
         <dt><span data-translate="vmwebApp.movie.actor">Actor</span></dt>
         <dd>
             <span ng-repeat="actor in vm.movie.actors">
-                <a ui-sref="actor-detail({id: actor.id})">{{actor.id}}</a>{{$last ? '' : ', '}}
+                <img  picture-load="{{actor.person.profilePictureId}}" style="max-height: 100px;"/>
+                {{actor.actorCharacter}}
+                (<a ui-sref="person-detail({id: actor.personId})">{{actor.person.name}}</a>){{$last ? '' : ','}}<br/>
             </span>
         </dd>
         <dt><span data-translate="vmwebApp.movie.crew">Crew</span></dt>
         <dd>
             <span ng-repeat="crew in vm.movie.crews">
-                <a ui-sref="crew-detail({id: crew.id})">{{crew.id}}</a>{{$last ? '' : ', '}}
+                <img  picture-load="{{crew.person.profilePictureId}}" style="max-height: 100px;"/>
+                <a ui-sref="person-detail({id: crew.personId})">{{crew.person.name}}</a> ({{crew.job}} - {{crew.department}}){{$last ? '' : ', '}}<br/>
             </span>
         </dd>
         <dt><span data-translate="vmwebApp.movie.artwork">Artwork</span></dt>
         <dd>
+
             <span ng-repeat="artwork in vm.movie.artworks">
-                <a ui-sref="picture-detail({id: artwork.id})">{{artwork.id}}</a>{{$last ? '' : ', '}}
+                <img  picture-load="{{artwork.id}}" style="max-height: 100px;"/>
+                <!--<a ui-sref="picture-detail({id: artwork.id})">{{artwork.id}}</a>{{$last ? '' : ', '}}-->
             </span>
         </dd>
         <dt><span data-translate="vmwebApp.movie.genre">Genre</span></dt>
         <dd>
             <span ng-repeat="genre in vm.movie.genres">
-                <a ui-sref="genre-detail({id: genre.id})">{{genre.id}}</a>{{$last ? '' : ', '}}
+                <a ui-sref="genre-detail({id: genre.id})">{{genre.name}}</a>{{$last ? '' : ', '}}
             </span>
         </dd>
     </dl>
