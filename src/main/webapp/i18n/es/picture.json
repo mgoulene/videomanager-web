@@ -1,0 +1,27 @@
+{
+    "vmwebApp": {
+        "picture" : {
+            "home": {
+                "title": "Pictures",
+                "createLabel": "Crear nuevo Picture",
+                "createOrEditLabel": "Crear o editar Picture",
+                "search": "Search for Picture"
+            },
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Picture {{ id }}?"
+            },
+            "detail": {
+                "title": "Picture"
+            },
+            "type": "Type",
+            "image": "Image"
+        }
+    },
+    "vmmsApp": {
+        "picture" : {
+            "created": "Un nuevo Picture ha sido creado con el identificador {{ param }}",
+            "updated": "Un Picture ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Picture ha sido eliminado con el identificador {{ param }}"
+        }
+    }
+}

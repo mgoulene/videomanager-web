@@ -1,0 +1,27 @@
+{
+    "vmwebApp": {
+        "picture" : {
+            "home": {
+                "title": "Pictures",
+                "createLabel": "Picture erstellen",
+                "createOrEditLabel": "Picture erstellen oder bearbeiten",
+                "search": "Suche nach Picture"
+            },
+            "delete": {
+                "question": "Soll Picture {{ id }} wirklich dauerhaft gelöscht werden?"
+            },
+            "detail": {
+                "title": "Picture"
+            },
+            "type": "Type",
+            "image": "Image"
+        }
+    },
+    "vmmsApp": {
+        "picture" : {
+            "created": "Picture erstellt mit ID {{ param }}",
+            "updated": "Picture aktualisiert mit ID {{ param }}",
+            "deleted": "Picture gelöscht mit ID {{ param }}"
+        }
+    }
+}

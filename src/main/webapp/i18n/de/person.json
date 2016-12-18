@@ -1,0 +1,33 @@
+{
+    "vmwebApp": {
+        "person" : {
+            "home": {
+                "title": "People",
+                "createLabel": "Person erstellen",
+                "createOrEditLabel": "Person erstellen oder bearbeiten",
+                "search": "Suche nach Person"
+            },
+            "delete": {
+                "question": "Soll Person {{ id }} wirklich dauerhaft gelöscht werden?"
+            },
+            "detail": {
+                "title": "Person"
+            },
+            "name": "Name",
+            "birthday": "Birthday",
+            "deathday": "Deathday",
+            "biography": "Biography",
+            "birthplace": "Birthplace",
+            "homepage": "Homepage",
+            "tmdbId": "Tmdb Id",
+            "profilePicture": "Profile Picture"
+        }
+    },
+    "vmmsApp": {
+        "person" : {
+            "created": "Person erstellt mit ID {{ param }}",
+            "updated": "Person aktualisiert mit ID {{ param }}",
+            "deleted": "Person gelöscht mit ID {{ param }}"
+        }
+    }
+}

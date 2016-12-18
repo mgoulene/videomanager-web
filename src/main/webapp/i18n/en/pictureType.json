@@ -1,0 +1,11 @@
+{
+    "vmwebApp": {
+        "PictureType" : {
+            "null": "",
+            "POSTER_MOVIE": "POSTER_MOVIE",
+            "ARTWORK": "ARTWORK",
+            "PEOPLE": "PEOPLE",
+            "BACKDROP_MOVIE": "BACKDROP_MOVIE"
+        }
+    }
+}

@@ -1,0 +1,166 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myMovieLabel" data-translate="vmwebApp.movie.home.createOrEditLabel">Create or edit a Movie</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.movie.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.movie.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="vmwebApp.movie.title" for="field_title">Title</label>
+            <input type="text" class="form-control" name="title" id="field_title"
+                    ng-model="vm.movie.title"
+                    required ng-maxlength="200" />
+            <div ng-show="editForm.title.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.title.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.title.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="200">
+                    This field cannot be longer than 200 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="vmwebApp.movie.originalTitle" for="field_originalTitle">Original Title</label>
+            <input type="text" class="form-control" name="originalTitle" id="field_originalTitle"
+                    ng-model="vm.movie.originalTitle"
+                    ng-maxlength="200" />
+            <div ng-show="editForm.originalTitle.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.originalTitle.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="200">
+                    This field cannot be longer than 200 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="vmwebApp.movie.overview" for="field_overview">Overview</label>
+            <input type="text" class="form-control" name="overview" id="field_overview"
+                    ng-model="vm.movie.overview"
+                    ng-maxlength="40000" />
+            <div ng-show="editForm.overview.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.overview.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="40000">
+                    This field cannot be longer than 40000 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="vmwebApp.movie.releaseDate" for="field_releaseDate">Release Date</label>
+                <div class="input-group">
+                    <input id="field_releaseDate" type="text" class="form-control" name="releaseDate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.movie.releaseDate" is-open="vm.datePickerOpenStatus.releaseDate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('releaseDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="vmwebApp.movie.runtime" for="field_runtime">Runtime</label>
+            <input type="number" class="form-control" name="runtime" id="field_runtime"
+                    ng-model="vm.movie.runtime"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="vmwebApp.movie.voteRating" for="field_voteRating">Vote Rating</label>
+            <input type="number" class="form-control" name="voteRating" id="field_voteRating"
+                    ng-model="vm.movie.voteRating"
+                    min="0" max="10" />
+            <div ng-show="editForm.voteRating.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.voteRating.$error.min" data-translate="entity.validation.min" translate-value-min="0">
+                    This field should be more than 0.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.voteRating.$error.max" data-translate="entity.validation.max" translate-value-max="10">
+                    This field cannot be more than 10.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.voteRating.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="vmwebApp.movie.voteCount" for="field_voteCount">Vote Count</label>
+            <input type="number" class="form-control" name="voteCount" id="field_voteCount"
+                    ng-model="vm.movie.voteCount"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="vmwebApp.movie.homepage" for="field_homepage">Homepage</label>
+            <input type="text" class="form-control" name="homepage" id="field_homepage"
+                    ng-model="vm.movie.homepage"
+                    ng-maxlength="400" />
+            <div ng-show="editForm.homepage.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.homepage.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="400">
+                    This field cannot be longer than 400 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="vmwebApp.movie.budget" for="field_budget">Budget</label>
+            <input type="number" class="form-control" name="budget" id="field_budget"
+                    ng-model="vm.movie.budget"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="vmwebApp.movie.revenue" for="field_revenue">Revenue</label>
+            <input type="number" class="form-control" name="revenue" id="field_revenue"
+                    ng-model="vm.movie.revenue"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="vmwebApp.movie.tmdbId" for="field_tmdbId">Tmdb Id</label>
+            <input type="number" class="form-control" name="tmdbId" id="field_tmdbId"
+                    ng-model="vm.movie.tmdbId"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="vmwebApp.movie.poster" for="field_poster">Poster</label>
+            <select class="form-control" id="field_poster" name="poster" ng-model="vm.movie.posterId" ng-options="picture.id as picture.id for picture in vm.posters | orderBy:'id'">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="vmwebApp.movie.backdrop" for="field_backdrop">Backdrop</label>
+            <select class="form-control" id="field_backdrop" name="backdrop" ng-model="vm.movie.backdropId" ng-options="picture.id as picture.id for picture in vm.backdrops | orderBy:'id'">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label data-translate="vmwebApp.movie.actor" for="field_actor">Actor</label>
+            <select class="form-control" id="field_actor" multiple name="actor" ng-model="vm.movie.actors" ng-options="actor as actor.id for actor in vm.actors track by actor.id"></select>
+        </div>
+        <div class="form-group">
+            <label data-translate="vmwebApp.movie.crew" for="field_crew">Crew</label>
+            <select class="form-control" id="field_crew" multiple name="crew" ng-model="vm.movie.crews" ng-options="crew as crew.id for crew in vm.crews track by crew.id"></select>
+        </div>
+        <div class="form-group">
+            <label data-translate="vmwebApp.movie.artwork" for="field_artwork">Artwork</label>
+            <select class="form-control" id="field_artwork" multiple name="artwork" ng-model="vm.movie.artworks" ng-options="picture as picture.id for picture in vm.pictures track by picture.id"></select>
+        </div>
+        <div class="form-group">
+            <label data-translate="vmwebApp.movie.genre" for="field_genre">Genre</label>
+            <select class="form-control" id="field_genre" multiple name="genre" ng-model="vm.movie.genres" ng-options="genre as genre.id for genre in vm.genres track by genre.id"></select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

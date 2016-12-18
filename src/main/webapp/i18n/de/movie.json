@@ -1,0 +1,42 @@
+{
+    "vmwebApp": {
+        "movie" : {
+            "home": {
+                "title": "Movies",
+                "createLabel": "Movie erstellen",
+                "createOrEditLabel": "Movie erstellen oder bearbeiten",
+                "search": "Suche nach Movie"
+            },
+            "delete": {
+                "question": "Soll Movie {{ id }} wirklich dauerhaft gelöscht werden?"
+            },
+            "detail": {
+                "title": "Movie"
+            },
+            "title": "Title",
+            "originalTitle": "Original Title",
+            "overview": "Overview",
+            "releaseDate": "Release Date",
+            "runtime": "Runtime",
+            "voteRating": "Vote Rating",
+            "voteCount": "Vote Count",
+            "homepage": "Homepage",
+            "budget": "Budget",
+            "revenue": "Revenue",
+            "tmdbId": "Tmdb Id",
+            "poster": "Poster",
+            "backdrop": "Backdrop",
+            "actor": "Actor",
+            "crew": "Crew",
+            "artwork": "Artwork",
+            "genre": "Genre"
+        }
+    },
+    "vmmsApp": {
+        "movie" : {
+            "created": "Movie erstellt mit ID {{ param }}",
+            "updated": "Movie aktualisiert mit ID {{ param }}",
+            "deleted": "Movie gelöscht mit ID {{ param }}"
+        }
+    }
+}

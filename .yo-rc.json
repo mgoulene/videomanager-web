@@ -1,0 +1,38 @@
+{
+  "generator-jhipster": {
+    "jhipsterVersion": "3.12.1",
+    "baseName": "vmweb",
+    "packageName": "com.accenture.videomanager",
+    "packageFolder": "com/accenture/videomanager",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "hibernateCache": "hazelcast",
+    "clusteredHttpSession": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": "elasticsearch",
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "maven",
+    "enableSocialSignIn": false,
+    "jwtSecretKey": "67164491714766470140cf39074ea53a5363f5fb",
+    "useSass": true,
+    "applicationType": "gateway",
+    "testFrameworks": [
+      "gatling",
+      "cucumber",
+      "protractor"
+    ],
+    "jhiPrefix": "jhi",
+    "enableTranslation": true,
+    "nativeLanguage": "fr",
+    "languages": [
+      "fr",
+      "en",
+      "de",
+      "es"
+    ]
+  }
+}

@@ -1,0 +1,95 @@
+
+<div>
+    <h2><span data-translate="vmwebApp.movie.detail.title">Movie</span> {{vm.movie.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="vmwebApp.movie.title">Title</span></dt>
+        <dd>
+            <span>{{vm.movie.title}}</span>
+        </dd>
+        <dt><span data-translate="vmwebApp.movie.originalTitle">Original Title</span></dt>
+        <dd>
+            <span>{{vm.movie.originalTitle}}</span>
+        </dd>
+        <dt><span data-translate="vmwebApp.movie.overview">Overview</span></dt>
+        <dd>
+            <span>{{vm.movie.overview}}</span>
+        </dd>
+        <dt><span data-translate="vmwebApp.movie.releaseDate">Release Date</span></dt>
+        <dd>
+            <span>{{vm.movie.releaseDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="vmwebApp.movie.runtime">Runtime</span></dt>
+        <dd>
+            <span>{{vm.movie.runtime}}</span>
+        </dd>
+        <dt><span data-translate="vmwebApp.movie.voteRating">Vote Rating</span></dt>
+        <dd>
+            <span>{{vm.movie.voteRating}}</span>
+        </dd>
+        <dt><span data-translate="vmwebApp.movie.voteCount">Vote Count</span></dt>
+        <dd>
+            <span>{{vm.movie.voteCount}}</span>
+        </dd>
+        <dt><span data-translate="vmwebApp.movie.homepage">Homepage</span></dt>
+        <dd>
+            <span>{{vm.movie.homepage}}</span>
+        </dd>
+        <dt><span data-translate="vmwebApp.movie.budget">Budget</span></dt>
+        <dd>
+            <span>{{vm.movie.budget}}</span>
+        </dd>
+        <dt><span data-translate="vmwebApp.movie.revenue">Revenue</span></dt>
+        <dd>
+            <span>{{vm.movie.revenue}}</span>
+        </dd>
+        <dt><span data-translate="vmwebApp.movie.tmdbId">Tmdb Id</span></dt>
+        <dd>
+            <span>{{vm.movie.tmdbId}}</span>
+        </dd>
+        <dt><span data-translate="vmwebApp.movie.poster">Poster</span></dt>
+        <dd>
+            <a ui-sref="picture-detail({id:vm.movie.posterId})">{{vm.movie.posterId}}</a>
+        </dd>
+        <dt><span data-translate="vmwebApp.movie.backdrop">Backdrop</span></dt>
+        <dd>
+            <a ui-sref="picture-detail({id:vm.movie.backdropId})">{{vm.movie.backdropId}}</a>
+        </dd>
+        <dt><span data-translate="vmwebApp.movie.actor">Actor</span></dt>
+        <dd>
+            <span ng-repeat="actor in vm.movie.actors">
+                <a ui-sref="actor-detail({id: actor.id})">{{actor.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span data-translate="vmwebApp.movie.crew">Crew</span></dt>
+        <dd>
+            <span ng-repeat="crew in vm.movie.crews">
+                <a ui-sref="crew-detail({id: crew.id})">{{crew.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span data-translate="vmwebApp.movie.artwork">Artwork</span></dt>
+        <dd>
+            <span ng-repeat="artwork in vm.movie.artworks">
+                <a ui-sref="picture-detail({id: artwork.id})">{{artwork.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span data-translate="vmwebApp.movie.genre">Genre</span></dt>
+        <dd>
+            <span ng-repeat="genre in vm.movie.genres">
+                <a ui-sref="genre-detail({id: genre.id})">{{genre.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="movie-detail.edit({id:vm.movie.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

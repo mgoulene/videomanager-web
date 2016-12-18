@@ -1,0 +1,101 @@
+<div>
+    <h2 data-translate="vmwebApp.movie.home.title">Movies</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="movie.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs"  data-translate="vmwebApp.movie.home.createLabel">
+                        Create new Movie
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'vmwebApp.movie.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.reset()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="title"><span data-translate="vmwebApp.movie.title">Title</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="originalTitle"><span data-translate="vmwebApp.movie.originalTitle">Original Title</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="overview"><span data-translate="vmwebApp.movie.overview">Overview</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="releaseDate"><span data-translate="vmwebApp.movie.releaseDate">Release Date</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="runtime"><span data-translate="vmwebApp.movie.runtime">Runtime</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="voteRating"><span data-translate="vmwebApp.movie.voteRating">Vote Rating</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="voteCount"><span data-translate="vmwebApp.movie.voteCount">Vote Count</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="homepage"><span data-translate="vmwebApp.movie.homepage">Homepage</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="budget"><span data-translate="vmwebApp.movie.budget">Budget</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="revenue"><span data-translate="vmwebApp.movie.revenue">Revenue</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="tmdbId"><span data-translate="vmwebApp.movie.tmdbId">Tmdb Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="posterId"><span data-translate="vmwebApp.movie.poster">Poster</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="backdropId"><span data-translate="vmwebApp.movie.backdrop">Backdrop</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll="vm.loadPage(vm.page + 1)" infinite-scroll-disabled="vm.page >= vm.links['last']">
+                <tr ng-repeat="movie in vm.movies track by movie.id">
+                    <td><a ui-sref="movie-detail({id:movie.id})">{{movie.id}}</a></td>
+                    <td>{{movie.title}}</td>
+                    <td>{{movie.originalTitle}}</td>
+                    <td>{{movie.overview}}</td>
+                        <td>{{movie.releaseDate | date:'mediumDate'}}</td>
+                    <td>{{movie.runtime}}</td>
+                    <td>{{movie.voteRating}}</td>
+                    <td>{{movie.voteCount}}</td>
+                    <td>{{movie.homepage}}</td>
+                    <td>{{movie.budget}}</td>
+                    <td>{{movie.revenue}}</td>
+                    <td>{{movie.tmdbId}}</td>
+                    <td>
+                        <a ui-sref="picture-detail({id:movie.posterId})">{{movie.posterId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="picture-detail({id:movie.backdropId})">{{movie.backdropId}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="movie-detail({id:movie.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="movie.edit({id:movie.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="movie.delete({id:movie.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,106 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myPersonLabel" data-translate="vmwebApp.person.home.createOrEditLabel">Create or edit a Person</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.person.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.person.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="vmwebApp.person.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.person.name"
+                    required />
+            <div ng-show="editForm.name.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.name.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="vmwebApp.person.birthday" for="field_birthday">Birthday</label>
+                <div class="input-group">
+                    <input id="field_birthday" type="text" class="form-control" name="birthday" uib-datepicker-popup="{{dateformat}}" ng-model="vm.person.birthday" is-open="vm.datePickerOpenStatus.birthday"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('birthday')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="vmwebApp.person.deathday" for="field_deathday">Deathday</label>
+                <div class="input-group">
+                    <input id="field_deathday" type="text" class="form-control" name="deathday" uib-datepicker-popup="{{dateformat}}" ng-model="vm.person.deathday" is-open="vm.datePickerOpenStatus.deathday"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('deathday')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="vmwebApp.person.biography" for="field_biography">Biography</label>
+            <input type="text" class="form-control" name="biography" id="field_biography"
+                    ng-model="vm.person.biography"
+                    ng-maxlength="40000" />
+            <div ng-show="editForm.biography.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.biography.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="40000">
+                    This field cannot be longer than 40000 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="vmwebApp.person.birthplace" for="field_birthplace">Birthplace</label>
+            <input type="text" class="form-control" name="birthplace" id="field_birthplace"
+                    ng-model="vm.person.birthplace"
+                    ng-maxlength="1000" />
+            <div ng-show="editForm.birthplace.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.birthplace.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="1000">
+                    This field cannot be longer than 1000 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="vmwebApp.person.homepage" for="field_homepage">Homepage</label>
+            <input type="text" class="form-control" name="homepage" id="field_homepage"
+                    ng-model="vm.person.homepage"
+                    ng-maxlength="400" />
+            <div ng-show="editForm.homepage.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.homepage.$error.maxlength" data-translate="entity.validation.maxlength" translate-value-max="400">
+                    This field cannot be longer than 400 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="vmwebApp.person.tmdbId" for="field_tmdbId">Tmdb Id</label>
+            <input type="number" class="form-control" name="tmdbId" id="field_tmdbId"
+                    ng-model="vm.person.tmdbId"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label data-translate="vmwebApp.person.profilePicture" for="field_profilePicture">Profile Picture</label>
+            <select class="form-control" id="field_profilePicture" name="profilePicture" ng-model="vm.person.profilePictureId" ng-options="picture.id as picture.id for picture in vm.profilepictures | orderBy:'id'">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

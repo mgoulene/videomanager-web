@@ -1,0 +1,29 @@
+{
+    "vmwebApp": {
+        "actor" : {
+            "home": {
+                "title": "Actors",
+                "createLabel": "Actor erstellen",
+                "createOrEditLabel": "Actor erstellen oder bearbeiten",
+                "search": "Suche nach Actor"
+            },
+            "delete": {
+                "question": "Soll Actor {{ id }} wirklich dauerhaft gelöscht werden?"
+            },
+            "detail": {
+                "title": "Actor"
+            },
+            "actorOrder": "Actor Order",
+            "actorCharacter": "Actor Character",
+            "person": "Person",
+            "movieActor": "Movie Actor"
+        }
+    },
+    "vmmsApp": {
+        "actor" : {
+            "created": "Actor erstellt mit ID {{ param }}",
+            "updated": "Actor aktualisiert mit ID {{ param }}",
+            "deleted": "Actor gelöscht mit ID {{ param }}"
+        }
+    }
+}

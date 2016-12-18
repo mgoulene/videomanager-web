@@ -1,0 +1,29 @@
+{
+    "vmwebApp": {
+        "actor" : {
+            "home": {
+                "title": "Actors",
+                "createLabel": "Create a new Actor",
+                "createOrEditLabel": "Create or edit a Actor",
+                "search": "Search for Actor"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Actor {{ id }}?"
+            },
+            "detail": {
+                "title": "Actor"
+            },
+            "actorOrder": "Actor Order",
+            "actorCharacter": "Actor Character",
+            "person": "Person",
+            "movieActor": "Movie Actor"
+        }
+    },
+    "vmmsApp": {
+        "actor" : {
+            "created": "A new Actor is created with identifier {{ param }}",
+            "updated": "A Actor is updated with identifier {{ param }}",
+            "deleted": "A Actor is deleted with identifier {{ param }}"
+        }
+    }
+}

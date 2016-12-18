@@ -1,0 +1,10 @@
+version: '2'
+services:
+    vmweb-elasticsearch:
+        container_name: vmweb-elasticsearch
+        image: elasticsearch:2.4.1
+        # volumes:
+        #     - ~/volumes/jhipster/vmweb/elasticsearch/:/usr/share/elasticsearch/data/
+        ports:
+            - 9200:9200
+            - 9300:9300

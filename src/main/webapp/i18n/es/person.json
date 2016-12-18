@@ -1,0 +1,33 @@
+{
+    "vmwebApp": {
+        "person" : {
+            "home": {
+                "title": "People",
+                "createLabel": "Crear nuevo Person",
+                "createOrEditLabel": "Crear o editar Person",
+                "search": "Search for Person"
+            },
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Person {{ id }}?"
+            },
+            "detail": {
+                "title": "Person"
+            },
+            "name": "Name",
+            "birthday": "Birthday",
+            "deathday": "Deathday",
+            "biography": "Biography",
+            "birthplace": "Birthplace",
+            "homepage": "Homepage",
+            "tmdbId": "Tmdb Id",
+            "profilePicture": "Profile Picture"
+        }
+    },
+    "vmmsApp": {
+        "person" : {
+            "created": "Un nuevo Person ha sido creado con el identificador {{ param }}",
+            "updated": "Un Person ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Person ha sido eliminado con el identificador {{ param }}"
+        }
+    }
+}

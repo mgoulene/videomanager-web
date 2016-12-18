@@ -1,0 +1,29 @@
+{
+    "vmwebApp": {
+        "crew" : {
+            "home": {
+                "title": "Crews",
+                "createLabel": "Create a new Crew",
+                "createOrEditLabel": "Create or edit a Crew",
+                "search": "Search for Crew"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Crew {{ id }}?"
+            },
+            "detail": {
+                "title": "Crew"
+            },
+            "department": "Department",
+            "job": "Job",
+            "person": "Person",
+            "movieCrew": "Movie Crew"
+        }
+    },
+    "vmmsApp": {
+        "crew" : {
+            "created": "A new Crew is created with identifier {{ param }}",
+            "updated": "A Crew is updated with identifier {{ param }}",
+            "deleted": "A Crew is deleted with identifier {{ param }}"
+        }
+    }
+}

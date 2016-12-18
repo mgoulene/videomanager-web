@@ -1,0 +1,42 @@
+{
+    "vmwebApp": {
+        "movie" : {
+            "home": {
+                "title": "Movies",
+                "createLabel": "Create a new Movie",
+                "createOrEditLabel": "Create or edit a Movie",
+                "search": "Search for Movie"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Movie {{ id }}?"
+            },
+            "detail": {
+                "title": "Movie"
+            },
+            "title": "Title",
+            "originalTitle": "Original Title",
+            "overview": "Overview",
+            "releaseDate": "Release Date",
+            "runtime": "Runtime",
+            "voteRating": "Vote Rating",
+            "voteCount": "Vote Count",
+            "homepage": "Homepage",
+            "budget": "Budget",
+            "revenue": "Revenue",
+            "tmdbId": "Tmdb Id",
+            "poster": "Poster",
+            "backdrop": "Backdrop",
+            "actor": "Actor",
+            "crew": "Crew",
+            "artwork": "Artwork",
+            "genre": "Genre"
+        }
+    },
+    "vmmsApp": {
+        "movie" : {
+            "created": "A new Movie is created with identifier {{ param }}",
+            "updated": "A Movie is updated with identifier {{ param }}",
+            "deleted": "A Movie is deleted with identifier {{ param }}"
+        }
+    }
+}
