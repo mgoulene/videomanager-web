@@ -5,9 +5,9 @@
         .module('vmwebApp')
         .directive('pictureLoad', pictureLoad);
 
-    pictureLoad.$inject = ['Picture'];
+    pictureLoad.$inject = ['TmdbPicture'];
 
-    function pictureLoad(Picture) {
+    function pictureLoad(TmdbPicture) {
         var directive = {
             replace : true,
             restrict : 'A',
@@ -21,7 +21,7 @@
             if (element[0].nodeName == 'IMG') {
                 var posterId = attrs.pictureLoad;
                 if (posterId != null && posterId != "") {
-                    Picture.get({id : posterId}).$promise.then(function (result) {
+                    TmdbPicture.get({id : posterId}).$promise.then(function (result) {
                         element.attr('src', 'data:' + result.imageContentType + ';base64,' + result.image);
                         console.log(attrs.ngSrc);
                 });
