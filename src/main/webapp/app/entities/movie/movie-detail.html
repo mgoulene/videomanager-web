@@ -50,18 +50,18 @@
         </dd>
         <dt><span data-translate="vmwebApp.movie.poster">Poster</span></dt>
         <dd>
-            <img  picture-load="{{vm.movie.posterTmdbId}}" style="max-height: 200px;"/>
+            <img  picture-load="{{vm.movie.posterTmdbId}}" size="200" style="max-height: 200px;"/>
             <!--<a ui-sref="picture-detail({id:vm.movie.posterId})">{{vm.movie.posterId}}</a>-->
         </dd>
         <dt><span data-translate="vmwebApp.movie.backdrop">Backdrop</span></dt>
         <dd>
-            <img  picture-load="{{vm.movie.backdropTmdbId}}" style="max-height: 200px;"/>
+            <img  picture-load="{{vm.movie.backdropTmdbId}}" size="200" style="max-height: 200px;"/>
             <!--<a ui-sref="picture-detail({id:vm.movie.backdropId})">{{vm.movie.backdropId}}</a>-->
         </dd>
         <dt><span data-translate="vmwebApp.movie.actor">Actor</span></dt>
         <dd>
             <span ng-repeat="actor in vm.movie.actors">
-                <img  picture-load="{{actor.person.profilePictureTmdbId}}" style="max-height: 100px;"/>
+                <img  picture-load="{{actor.person.profilePictureTmdbId}}" size="50" style="max-height: 50px;"/>
                 {{actor.actorCharacter}}
                 (<a ui-sref="person-detail({id: actor.personId})">{{actor.person.name}}</a>){{$last ? '' : ','}}<br/>
             </span>
@@ -69,7 +69,7 @@
         <dt><span data-translate="vmwebApp.movie.crew">Crew</span></dt>
         <dd>
             <span ng-repeat="crew in vm.movie.crews">
-                <img  picture-load="{{crew.person.profilePictureTmdbId}}" style="max-height: 100px;"/>
+                <img  picture-load="{{crew.person.profilePictureTmdbId}}" size="50" style="max-height: 50px;"/>
                 <a ui-sref="person-detail({id: crew.personId})">{{crew.person.name}}</a> ({{crew.job}} - {{crew.department}}){{$last ? '' : ', '}}<br/>
             </span>
         </dd>
@@ -77,7 +77,7 @@
         <dd>
 
             <span ng-repeat="artwork in vm.movie.artworks">
-                <img  picture-load="{{artwork.tmdbId}}" style="max-height: 100px;"/>
+                <img  picture-load="{{artwork.tmdbId}}" size="100" style="max-height: 100px;"/>
                 <!--<a ui-sref="picture-detail({id: artwork.id})">{{artwork.id}}</a>{{$last ? '' : ', '}}-->
             </span>
         </dd>

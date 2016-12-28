@@ -20,10 +20,11 @@
         function load(scope, element, attrs) {
             if (element[0].nodeName == 'IMG') {
                 var posterId = attrs.pictureLoad;
+                var size = attrs.size;
                 if (posterId != null && posterId != "") {
-                    TmdbPicture.get({id : posterId}).$promise.then(function (result) {
+                    TmdbPicture.get({id : posterId, size: size}).$promise.then(function (result) {
                         element.attr('src', 'data:' + result.imageContentType + ';base64,' + result.image);
-                        console.log(attrs.ngSrc);
+
                 });
                 }
             }

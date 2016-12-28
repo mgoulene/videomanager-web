@@ -12,6 +12,8 @@
         return $resource(resourceUrl, {}, {
             'get': {
                 method: 'GET',
+                params: {},
+                isArray: false,
                 transformResponse: function (data) {
                     if (data) {
                         data = angular.fromJson(data);
