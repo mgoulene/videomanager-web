@@ -8,6 +8,10 @@
         <dd>
             <span>{{vm.person.name}}</span>
         </dd>
+        <dt><span data-translate="vmwebApp.person.name">Profile</span></dt>
+        <dd>
+            <span><img  picture-load="{{vm.person.profilePictureTmdbId}}" size="200" style="max-height: 200px;"/></span>
+        </dd>
         <dt><span data-translate="vmwebApp.person.birthday">Birthday</span></dt>
         <dd>
             <span>{{vm.person.birthday | date:'mediumDate'}}</span>

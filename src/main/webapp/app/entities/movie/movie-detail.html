@@ -60,11 +60,31 @@
         </dd>
         <dt><span data-translate="vmwebApp.movie.actor">Actor</span></dt>
         <dd>
+            <ol list-style-type="none" list-style-position="inside"
+                margin="30px 0 0 0"
+                padding="0"
+                display="-webkit-box"
+                display="-moz-box"
+                display="-ms-flexbox"
+                display="-webkit-flex"
+                display="flex"
+                -webkit-justify-content="space-between"
+                -moz-justify-content="space-between"
+                -ms-justify-content="space-between"
+                -ms-flex-pack="justify"
+                justify-content="space-between">
             <span ng-repeat="actor in vm.movie.actors">
-                <img  picture-load="{{actor.person.profilePictureTmdbId}}" size="50" style="max-height: 50px;"/>
-                {{actor.actorCharacter}}
-                (<a ui-sref="person-detail({id: actor.personId})">{{actor.person.name}}</a>){{$last ? '' : ','}}<br/>
+
+                    <li>
+                        <img  picture-load="{{actor.person.profilePictureTmdbId}}" size="50" style="max-height: 50px;"/>
+
+                    <p><a ui-sref="person-detail({id: actor.personId})">{{actor.person.name}}</a></p>
+                    <p>{{actor.actorCharacter}}</p>
+                </li>
+
+
             </span>
+            </ol>
         </dd>
         <dt><span data-translate="vmwebApp.movie.crew">Crew</span></dt>
         <dd>
